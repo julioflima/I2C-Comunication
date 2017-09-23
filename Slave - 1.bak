@@ -1,0 +1,106 @@
+#include <18F2550.h>
+#fuses HSPLL, NOWDT, NOPROTECT, NOLVP, NODEBUG, USBDIV, PLL5, CPUDIV1, VREGEN, NOXINST
+#use delay(clock=48000000)
+#use i2c(SLAVE,SDA=PIN_B0,FAST=450000,SCL=PIN_B1, ADDRESS=0xa0,NOFORCE_SW)
+#include <STDLIB.H>
+
+#use standard_io(b)
+
+int a=0, state, received=0, volt_c;
+int8 chip_v[27];
+int16 check_two=0;
+
+void Receive(int);
+void Voltages(int);
+void Random(void);
+void Blink(void);
+
+#INT_SSP
+void Happen_I2C()
+{
+   state = i2c_isr_state();
+   
+   Receive(state);
+
+   Voltages(state);
+   
+}
+   
+void main()
+{
+   setup_timer_0(RTCC_INTERNAL|RTCC_8_bit); //set the real time o clock
+
+   enable_interrupts(INT_SSP);
+   enable_interrupts(GLOBAL);
+   
+}
+
+void Receive(int state)
+{
+   if(i2c_poll())
+   {  
+      received = i2c_read();
+      
+      Random();
+      a = 0;
+   }
+}
+
+void Voltages(int state)
+{
+   if(state == 0x80)
+   {
+      i2c_write (chip_v[a]);
+      
+      a++;
+   }
+}
+
+void Random(void)
+{
+   srand(get_rtcc()); //seed the rand
+   
+   check_two=0;
+   for(volt_c=0 ; volt_c<23 ; volt_c++) //generate random values correspondent voltimeters
+   {
+      chip_v[volt_c] = rand()%256;//volt_c; 
+      
+      if(volt_c >= 3 && volt_c<23)
+      {
+         check_two = 43605;//chip_v[volt_c];
+      }
+      
+      if(volt_c == 1)
+      {
+         chip_v[2] = chip_v[0] + chip_v[1];
+         volt_c++;
+      }
+   }
+   chip_v[23] = check_two/256;
+   chip_v[24] = check_two;
+}
+
+/*
+void Blink(void)
+{
+      a ^= 1;
+      
+      if(a == 1)
+      {
+         output_high(PIN_C1);
+      }
+      else if(a == 0)
+      {
+         output_low(PIN_C1);
+      }
+      delay_ms(500);
+}
+*/
+
+
+
+
+
+
+
+

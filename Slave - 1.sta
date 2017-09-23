@@ -1,0 +1,57 @@
+
+ROM used: 746 (2%)
+          746 (2%) including unused fragments
+
+          0 Average locations per line
+          1 Average locations per statement
+
+RAM used: 64 (3%) at main() level
+          81 (4%) worst case
+
+Stack used: 5 worst case (out of 26 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  107    29   5  Slave - 1.c
+  374     0   0  ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F2550.h
+ 1493   380  72  ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\STDLIB.H
+   28     0   0  ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+  409   121  23  ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   28     0   0  ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+----- -----
+ 2439   530 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     24   2   1             @I2C_WRITE_1
+0     86   6  14  1084 11.8  @MUL3232
+0    108   7   4   101  3.8  rand
+0     68   5   5   101  3.8  @DIV1616
+0     20   1   4    39  2.1  srand
+0     34   2   0    52  1.7  Happen_I2C
+0     62   4   0    59  1.6  MAIN
+0     22   1   1    82  2.0  Receive
+0     36   2   2    78  2.8  Voltages
+0    132   9   6   491  7.6  Random
+
+Program metrics:
+    Functions               9
+    Statements              530
+    Comments                911
+    Volume (V)              3035
+    Difficilty (D)          38.3
+    Effort to implement (E) 116071
+    Time to implement (T)   1 hours, 47 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   9
+    Maintainability (MI)    81
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-0009C   150  0  
+0009E-07FFE   592  32018  
+
+
+

@@ -1,0 +1,120 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018-019 strtok.save
+01A-01D _Randseed
+01E     a
+01F     state
+020     received
+021     volt_c
+022-03C chip_v
+03D-03E check_two
+03F     @I2C_STATE
+040     Voltages.state
+040     Receive.state
+041     Voltages.@SCRATCH1
+041     Random.@SCRATCH1
+042     @I2C_WRITE_1.P1
+042     Random.@SCRATCH2
+043-046 srand.seed
+043-046 @MUL3232.P1
+043     rand.@SCRATCH1
+043     Random.@SCRATCH3
+044     rand.@SCRATCH2
+044     Random.@SCRATCH4
+045     rand.@SCRATCH3
+045     Random.@SCRATCH5
+046-047 @DIV1616.P1
+046     rand.@SCRATCH4
+046     Random.@SCRATCH6
+047-04A @MUL3232.P1
+048-049 @DIV1616.P1
+04A     @DIV1616.@SCRATCH1
+04B     @MUL3232.@SCRATCH1
+04C     @MUL3232.@SCRATCH2
+04D     @MUL3232.@SCRATCH3
+04E     @MUL3232.@SCRATCH4
+04F     @MUL3232.@SCRATCH5
+050     @MUL3232.@SCRATCH6
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB-FBC CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE-FBF CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0252  @I2C_WRITE_1
+00B2  @MUL3232
+014C  rand
+0108  @DIV1616
+009E  srand
+028E  Happen_I2C
+02B0  MAIN
+023C  Receive
+026A  Voltages
+01B8  Random
+02B0  @cinit
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    C:\Users\julio\OneDrive\Documentos\MEGA\Eletrônica\Trabalho\Alexandre Cunha\Simulador\Code\CCS\Final\
+
+Project Files:
+    Slave - 1.c
+    ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F2550.h
+    ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\STDLIB.H
+    ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+    ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+    ..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+
+Units:
+    Slave - 1.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F2550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Slave - 1.err
+    Ext Symbols: Slave - 1.esym
+    INHX32:      Slave - 1.hex
+    Symbols:     Slave - 1.sym
+    List:        Slave - 1.lst
+    Debug/COFF:  Slave - 1.cof
+    Project:     Slave - 1.PJT
+    Call Tree:   Slave - 1.tre
+    Statistics:  Slave - 1.sta

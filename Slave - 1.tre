@@ -1,0 +1,12 @@
+ÀÄSlave - 1
+   ÃÄMAIN  0/62  Ram=0
+   ³  ÀÄ??0??
+   ÀÄHappen_I2C  0/34  Ram=0
+      ÃÄReceive  0/22  Ram=1
+      ³  ÀÄRandom  0/132  Ram=6
+      ³     ÃÄsrand  0/20  Ram=4
+      ³     ÀÄrand  0/108  Ram=4
+      ³        ÃÄ@MUL3232  0/86  Ram=14
+      ³        ÀÄ@DIV1616  0/68  Ram=5
+      ÀÄVoltages  0/36  Ram=2
+         ÀÄ@I2C_WRITE_1  0/24  Ram=1
